@@ -32,7 +32,7 @@ def send_mail(send_from,send_to,subject,text,server,port,username='',password=''
 
 sender = "sakethg250@gmail.com"
 recipients = ["sakethg250@gmail.com","marcos@crystalwg.com"]
-password = "ztrgzuxuzwbgfskf"
+password = "xjyb jsdl buri ylqr"
 
 r = requests.get('https://api.helpdesk.com/v1/tickets/?silo=tickets&pageSize=100&page=1&status=solved',\
                 auth = HTTPBasicAuth('bd0f01d1-471d-46bc-9c9f-16dab26ddb06', 'dal:j4wvStMiQ7letbTzNW-xKSh8tvs'))
