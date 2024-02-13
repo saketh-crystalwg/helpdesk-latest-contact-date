@@ -47,8 +47,7 @@ for i in range(tot_pages):
     df = pd.DataFrame(r.json())
     requester_email = pd.json_normalize(df.requester)['email']
     df['requester_email'] = requester_email
-    Assignment = pd.json_normalize(df.assignment)
-    df['agent_name']=Assignment['agent.name']
+    df['agent_name'] = df['events'].apply(lambda events: [event.get('author','').get('name','') for event in events][0])
     df_collated = pd.concat([df_collated,df[['lastMessageAt','subject','requester_email','agent_name']]])
     
 df_collated['lastMessageAt'] = pd.to_datetime(df_collated['lastMessageAt']).dt.tz_convert('UTC')
