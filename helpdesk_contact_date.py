@@ -57,7 +57,7 @@ df_collated['Contact_Date'] = pd.to_datetime(df_collated['lastMessageAt']).dt.da
 Last_Contact_date = df_collated.groupby('requester_email').agg({'Contact_Date':'max'}).reset_index().rename(columns = {'Contact_Date' : 'Last_Contact_Date'})
 
 try:
-    engine = create_engine('postgresql://orpctbsqvqtnrx:530428203217ce11da9eb9586a5513d0c7fe08555c116c103fd43fb78a81c944@ec2-34-202-53-101.compute-1.amazonaws.com:5432/d46bn1u52baq92',\
+    engine = create_engine('postgresql://u24oms6hlf95tc:pc754b964184cc5affbc1d688ffa420767bb6f85f7f24f759c924b3fd125d46dd@c6m929eht211hc.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com/d5t2ohqpj43jns',\
                            echo = False)
 
     Last_Contact_date.to_sql('last_contact_info', con = engine, if_exists='replace')
